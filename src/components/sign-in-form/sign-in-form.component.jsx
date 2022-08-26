@@ -36,10 +36,10 @@ const SignInForm = () => {
             const { user } = await signInAuthUserWithEmailAndPassword(email, password);
             resetFormFields();
         } catch(error) {
-            if (error.code == "auth/wrong-password") {
+            if (error.code === "auth/wrong-password") {
                 alert("incorrect password for email");
             }
-            if (error.code == "auth/user-not-found") {
+            if (error.code === "auth/user-not-found") {
                 alert("no user associated with this email");
             }
             console.log(error);
